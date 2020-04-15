@@ -1,0 +1,1 @@
+SELECT user.user_id, user_name, SUM(status) as 'Total score' FROM user_result INNER JOIN user on user_result.user_id = user.user_id GROUP BY user.user_id;

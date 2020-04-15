@@ -1,0 +1,29 @@
+
+user table
+- user_id (primary_key)
+- user_name
+
+
+Question table
+- question_id (primary_key)
+- question_detail
+- option1
+- option2
+- option3
+- option4
+
+Answer table
+- answer_id
+- question_id (foreign key)
+- correct_answer
+
+User_result table
+- id
+- user_id (foreign key)
+- question_id (foreign key)
+- user_answer
+- status (right or wrong, 1 or 0)
+
+
+
+

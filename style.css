@@ -1,0 +1,268 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+#frame{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 20, 170, 0.5);
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+#frame .container{
+	width: 75%;
+	height: 560px;
+	background-color: #eee;
+	border-radius: 5px;
+	box-shadow: 0px 2px 7px 3px #555;
+	position: relative;
+
+}
+
+.heading{
+	position: relative;
+}
+
+.heading .quizname{
+	letter-spacing: 3px;
+}
+
+.heading #separator{
+	background-color: rgba(0, 20, 170, 0.3);
+}
+
+.heading .userdisplay{
+	background-color: rgba(0, 20, 170, 0.3);
+	color: #fff;
+	box-shadow: 0px 0px 5px 2px #555;
+	position: absolute;
+	right: 0;
+	margin-right: 20px;
+
+}
+
+
+.heading .userdisplay #uname{
+	color: #444;
+	font-style: italic;
+}
+
+.heading .timedisplay{
+	background-color: #fff;
+	box-shadow: 0px 0px 5px 2px #555;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.body{
+	border-left: 4px solid #ccc;
+	position: relative;
+}
+
+.body #questionnum{
+	color: rgba(0, 20, 170, 0.6);
+}
+
+.body #question{
+	color: #333;
+	font-size: 15px;
+	max-height: 250px;
+	overflow-y: scroll;
+
+}
+
+.body .options .form-check-inline{
+	padding-right: 15px;
+	color: #333;
+	font-size: 15px;
+}
+
+.body .options .form-check-inline input[type=radio]{
+	box-shadow: 0 0 3px 0px blue;
+	cursor: pointer;
+
+}
+
+.body .options .form-check-inline input[type=radio]:focus{
+	box-shadow: 0 0 4px 1px blue;
+}
+
+.bodyy{
+	/*display: flex;*/
+	/*align-items: center;
+	justify-content: center;*/
+	/*text-align: center;
+	margin-top: 80px;*/
+	position: absolute;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	top: 35%;
+
+
+}
+
+.bodyy #inputfield{
+	width: 50%;
+	margin-bottom: 20px;
+	padding: 14px;
+	text-align: center;
+	border-radius: 7px;
+	border: none;
+	box-shadow: 0px 0px 2px 0px #333;
+
+
+}
+
+.bodyy #submit{
+	outline: none;
+	padding: 6px;
+	width: 10%;
+	cursor: pointer;
+	border-radius: 7px;
+	border: none;
+	box-shadow: 0px 0px 3px 1px #333;
+	letter-spacing: 0.9px;
+	transition: 0.2s;
+
+}
+
+.bodyy #submit:hover{
+	box-shadow: 0px 0px 3px 3px #555;
+}
+
+.bodyy #err{
+	width: 40%;
+	margin: 0 auto;
+}
+
+.end-body{
+	text-align: center;
+	margin-top: 50px;
+}
+
+.end-body .fa-certificate{
+	font-size: 4em;
+}
+
+.footer{
+	position: absolute;
+	background-color: rgba(0, 20, 170, 0.1);;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 13%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.footer .btn{
+	position: relative;
+	margin-right: 20px;
+	box-shadow: 0px 0px 3px 2px #555;
+}
+
+/*media queries*/
+
+@media (max-width: 750px){
+	#frame .container{
+		width: 80%;
+		height: 510px;
+	}
+
+	.heading .quizname{
+		font-size: 2.3em;
+	}
+
+	.heading .desc{
+		font-size: 0.8em;
+	}
+	
+	.bodyy #submit{
+		font-size: 12px;
+		width: 50px;
+	}
+
+	.bodyy #inputfield{
+		width: 90%;
+		height: 40px;
+		margin-bottom:30px;
+	}
+
+	.bodyy #err{
+		margin-top: 5px;
+		width: 90%;
+		padding: 5px;
+	}
+
+}
+
+@media (max-width: 600px){
+	.body .options .form-check-inline{
+		display: block;
+		text-align: left;
+	}
+
+	.body .options{
+		margin-top: 40px;
+	}
+
+	.heading .timedisplay{
+		font-size: 11px;
+		top: -20px;
+
+
+	}
+
+	.heading .userdisplay{
+		font-size: 12px;
+		left: 0;
+		right: 0;
+		margin: auto;
+
+	}
+
+	.body #questionnum{
+		margin-top: 20px;
+	}
+
+	.footer .btn{
+		font-size: 12px;
+	}
+
+	.end-body .desc1{
+		font-size: 2.3em;
+	}
+
+	.end-body .fa-certificate{
+		font-size: 2.7em;
+	}
+
+	.end-body .fa-check-circle{
+		font-size: 0.8em;
+	}
+
+	.end-body .fa-clock-o{
+		font-size: 0.8em;
+	}
+
+	.end-body .warn{
+		font-size: 2.7em;
+	}
+
+}
+
+
