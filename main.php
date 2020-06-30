@@ -33,7 +33,7 @@
 }else{
 ?>
 <script>
-	var x = 1;
+	var x = 10;
 	var y = 0;
 </script>
 <?php
@@ -93,9 +93,10 @@
 
 			<div class="body p-4">
 				<h4 class="text-center" id="questionnum">- Question <?php echo $row['question_id'];?> -</h4>
-				<p id="question" class="mt-4">
+				<p class="text-muted text-center" id="note"><i class="fa fa-bell text-danger"></i><strong> Remember to Scroll down when the Scroll bar appears close to a Question.</strong></p>
+				<div id="question" class="mt-4">
 					<?php echo $row['question_detail']; ?>
-				</p>
+				</div>
 				<div class="text-center options">
 					<form action="" method="POST">
 						<div class="form-check-inline">

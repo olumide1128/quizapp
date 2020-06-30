@@ -29,6 +29,15 @@
 
 }
 
+#frame .container2{
+	width: 75%;
+	/*height: 560px;*/
+	background-color: #eee;
+	border-radius: 5px;
+	box-shadow: 0px 2px 7px 3px #555;
+
+}
+
 .heading{
 	position: relative;
 }
@@ -68,6 +77,7 @@
 .body{
 	border-left: 4px solid #ccc;
 	position: relative;
+	top: -15px;
 }
 
 .body #questionnum{
@@ -76,10 +86,22 @@
 
 .body #question{
 	color: #333;
-	font-size: 15px;
-	max-height: 250px;
-	overflow-y: scroll;
+	font-size: 16px;
+	max-height: 160px;
+	overflow-y: auto;
+	margin-bottom: 20px;
+	padding: 5px 30px;
 
+}
+
+.body #question code{
+	font-size: 14px;
+	color: #444;
+	padding-left: 20px;
+}
+
+.body #note{
+	font-size: 14px;
 }
 
 .body .options .form-check-inline{
@@ -113,6 +135,22 @@
 
 }
 
+.bodyAddQuestion{
+	/*display: flex;*/
+	/*align-items: center;
+	justify-content: center;*/
+	/*text-align: center;
+	margin-top: 80px;*/
+	margin: auto;
+	text-align: center;
+	width: 100%;
+	top: 20%;
+	max-height: 400px;
+	overflow-y: auto;
+
+
+}
+
 .bodyy #inputfield{
 	width: 50%;
 	margin-bottom: 20px;
@@ -125,7 +163,8 @@
 
 }
 
-.bodyy #submit{
+.bodyy #submit,
+.bodyAddQuestion #submit{
 	outline: none;
 	padding: 6px;
 	width: 10%;
@@ -137,6 +176,7 @@
 	transition: 0.2s;
 
 }
+
 
 .bodyy #submit:hover{
 	box-shadow: 0px 0px 3px 3px #555;
@@ -217,7 +257,7 @@
 	}
 
 	.body .options{
-		margin-top: 40px;
+		margin-top: 20px;
 	}
 
 	.heading .timedisplay{
@@ -236,7 +276,29 @@
 	}
 
 	.body #questionnum{
-		margin-top: 20px;
+		margin-top: 30px;
+		font-size: 18px;
+	}
+
+	.body #question{
+		font-size: 14px;
+	}
+
+	.body .options .form-check-inline{
+		font-size: 12px;
+	}
+
+	.body #note{
+		font-size: 12px;
+		margin-bottom: -15px;
+	}
+
+	.body #question code{
+		font-size: 12px;
+	}
+
+	.body #question{
+		max-height: 120px;
 	}
 
 	.footer .btn{
