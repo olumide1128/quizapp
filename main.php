@@ -21,26 +21,11 @@
 	<?php
 	$questionid = 1;
 
-	if(isset($_GET['questionid']) && isset($_GET['x']) && isset($_GET['y'])){
-	$questionid = $_GET['questionid'];
+	if(isset($_GET['questionid'])){
+		$questionid = $_GET['questionid'];
+	}
 
-?>
-<script>
-	var x = Number("<?php echo $_GET['x']; ?>");
-	var y = Number("<?php echo $_GET['y']; ?>");
-</script>
-<?php  
-}else{
-?>
-<script>
-	var x = 10;
-	var y = 0;
-</script>
-<?php
-}
-?>
-
-
+	?>
 
 
 
@@ -119,7 +104,7 @@
 				<?php  
 					if($row['question_id'] > 1){
 						?>
-						<a href="?questionid=<?php echo $questionid - 1; ?>" id="prevLink" class="btn btn-sm btn-danger" onclick="addToPrev()"><i class = "fa fa-arrow-left"></i> Prev</a>
+						<a href="?questionid=<?php echo $questionid - 1; ?>" id="prevLink" class="btn btn-sm btn-danger"><i class = "fa fa-arrow-left"> Prev</i></a>
 						<?php 
 					}
 
@@ -131,7 +116,7 @@
 
 					if($questionid < $row1['num_of_rows']){
 						?>
-						<a href="?questionid=<?php echo $questionid + 1; ?>" id="nextLink" class="btn btn-sm btn-success" onclick="addToNext()" name="submit">Next <i class = "fa fa-arrow-right"></i></a>
+						<a href="?questionid=<?php echo $questionid + 1; ?>" id="nextLink" class="btn btn-sm btn-success">Next <i class = "fa fa-arrow-right"></i></a>
 						<?php
 					}
 					
@@ -149,37 +134,85 @@
 	<script>
 
 
+		var minSession = sessionStorage.getItem("minSession");
+		var secSession = sessionStorage.getItem("secSession");
+
+		if(minSession == null){
+			sessionStorage.setItem("minSession", 10);
+			sessionStorage.setItem("secSession", 0);
+		}
+
+		var min = Number(sessionStorage.getItem("minSession"));
+		var sec = Number(sessionStorage.getItem("secSession"));
+
+
 		var myVar = setInterval(timer, 1000);
 
 		function timer(){
 
-			if(y < 10){
-				y = '0'+y;
+			if(sec < 10){
+				sec = '0'+sec;
 			}
 
-			var time = x+':'+y
+			var time = min+':'+sec
 			document.getElementById('time-show').innerHTML = time;
-			y-=1;
+			sec-=1;
 
-			if(y < 0){
-				y = 59;
-				x -= 1;
+			if(sec < 0){
+				sec = 59;
+				min -= 1;
 			}
 
-			if(x == 0 && y == 0){
+			if(min == 0 && sec == 0){
 				location.href = "end.php";
 			}
 		}
+		
 
-		function addToNext(){
-			document.getElementById('nextLink').href += "&x="+x+"&y="+y;
-			
-		}
+		$('#nextLink').click(function(e){
+			e.preventDefault();
 
-		function addToPrev(){
-			document.getElementById('prevLink').href += "&x="+x+"&y="+y;
+			//Store new time as session
+			var time = $("#time-show").text();
+	    	var minPart = time.split(":")[0];
+			var secPart = time.split(":")[1];
+
+			console.log(minPart);
+			console.log(secPart);
+
+			var minSession = sessionStorage.setItem("minSession", minPart);
+			var secSession = sessionStorage.setItem("secSession", secPart);
+
+			var url = $(this).attr('href');
+			var fullUrl = "main.php"+url;
+			window.location = fullUrl;
+			console.log(fullUrl);
+
+		});
+
+
+
+		$('#prevLink').click(function(e){
+			e.preventDefault();
+
+			//Store new time as session
+			var time = $("#time-show").text();
+	    	var minPart = time.split(":")[0];
+			var secPart = time.split(":")[1];
+
+			console.log(minPart);
+			console.log(secPart);
+
+			var minSession = sessionStorage.setItem("minSession", minPart);
+			var secSession = sessionStorage.setItem("secSession", secPart);
+
+			var url = $(this).attr('href');
+			var fullUrl = "main.php"+url;
+			window.location = fullUrl;
+			console.log(fullUrl);
 			
-		}
+		});
+
 
 		$('input[type=radio]').click(function(e) {//jQuery works on clicking radio box
 	        var value = $(this).val(); //Get the clicked checkbox value
