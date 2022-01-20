@@ -3,7 +3,7 @@ Quiz Web Application built with PHP and Javascript.
 
 #Working Sample
 
-This is the link to the Quiz Application - https://dynamicquizapp.000webhostapp.com
+This is the link to the Quiz Application - https://dynamicquizapp01.000webhostapp.com
 
 #Instructions
 
