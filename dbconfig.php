@@ -1,7 +1,7 @@
 <?php
 
 
-	$conn = mysqli_connect("localhost","<<username>>","<<dbPassword>>","<<dbName>>");
+	$conn = mysqli_connect("localhost","root","olumysql94","quizappdb");
 
 	// Check connection
 	if (!$conn){
